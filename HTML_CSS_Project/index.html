@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stonks.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src='https://cdn.plot.ly/plotly-2.25.2.min.js'></script>
+    <link rel="icon" href="Favicon.png">
+  </head>
+<body>
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div id="test" class="container-fluid">
+      <button id="title" onmouseover="highlight(this)" onmouseout="unhighlight(this)">Stonks</button>
+    <div id="updownMessage">
+      <p id="theMarketIs">The market is</p>
+      <div id="textnode">Up</div>
+    </div>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li id="login">
+            <button id ="loginButton" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick = "login()">Login</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- mainBody -->
+  <div id="mainBody">
+
+    <!-- currentBalanceCard -->
+    <div id="bigLeftSide">
+      <input id ="stockInput" name="stockName" type="text" placeholder="Input Stock Ticker">
+      <button id="submitStock" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="stockView()">Submit</button>
+      <button id="revertToCurrentBalance" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="goToCurrentBalance()">Go to Current Balance</button>
+      <div id="leftSide">
+        <h2 id="greeting">Good Morning!</h2>
+        <div id="currentBalanceCard">
+          <h4 id = "currentBalance" >Current Balance: (Hidden)</h4>
+          <div id="bigGraph">
+          </div>
+          <div id="dateBar">
+            <button id="oneDay" class="date" onmouseover="highlight(this)" onmouseout="unhighlightWhite(this)" onclick="oneDay()">1D</button>
+            <button id="oneWeek"class="date" onmouseover="highlight(this)" onmouseout="unhighlightWhite(this)" onclick="oneWeek()">1W</button>
+            <button id="oneMonth"class="date" onmouseover="highlight(this)" onmouseout="unhighlightWhite(this)" onclick="oneMonth()">1M</button>
+            <button id="threeMonth"class="date" onmouseover="highlight(this)" onmouseout="unhighlightWhite(this)" onclick="threeMonth()">3M</button>
+            <button id="oneYear"class="date" onmouseover="highlight(this)" onmouseout="unhighlightWhite(this)" onclick="oneYear()">1Y</button>
+            <button id="twoYear"class="date" onmouseover="highlight(this)" onmouseout="unhighlightWhite(this)" onclick="fiveYear()">2Y</button>
+            <button id="max"class="date" onmouseover="highlight(this)" onmouseout="unhighlightWhite(this)" onclick="max()">Max</button>
+          </div>
+        </div>
+        <h3 id="belowGraphHiLo">Hi: (Hidden) Lo: (Hidden)</h3>
+        <button id="trade" onmouseover="highlightTrade()" onmouseout="unhighlightTrade()" onclick="trade()">Trade</button>
+      </div>
+    </div>
+    <!-- sideBarCards -->
+    <div id="rightSide">
+      <!-- <label id="inputDate">Input Date:</label>
+      <input id="date" type="date"> -->
+      <input type="date" id="date">
+      <button id="submit" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="errorDate();selectDate();loadPriceSpy();chartSpy();loadPriceAapl();chartAapl();loadPriceGme();chartGme();hiLoSpy();hiLoAapl();hiLoGme()">Submit</button>
+      <div class="stockSample" >
+        <h3 id = "spyPrice">SPY (Select Date)</h3>
+        <div id="spyChart"></div>
+        <div class="hiLoTrade">
+          <h6 id="stockHiLoSpy">Hi:  Lo: </h6>
+          <button class="smallTrade" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick= "tradeSpy()" >Trade</button>
+        </div>
+      </div>
+      <div class="stockSample">
+        <h3 id = "aaplPrice" >AAPL (Select Date)</h3>
+        <div id="aaplChart"></div>
+        <div class="hiLoTrade">
+          <h6 id="stockHiLoAapl">Hi:  Lo: </h6>
+          <button class="smallTrade" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick= "tradeAapl()" >Trade</button>
+        </div>
+      </div>
+      <div class="stockSample">
+        <h3 id = "gmePrice">GME (Select Date)</h3>
+        <div id="gmeChart"></div>
+        <div class="hiLoTrade">
+          <h6 id="stockHiLoGme">Hi:  Lo: </h6>
+          <button class="smallTrade" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick= "tradeGme()" >Trade</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Bottom Bar -->
+<div id="botBar">
+  <div id="botInfo">
+    <img id="twitter" onclick="alert('Twitter')" src="twitter.png" alt="twitter">
+    <img id="meta" onclick="alert('Meta')" src="meta.png" alt="meta">
+    <img id="instagram" onclick="alert('Instagram')" src="instagram.png" alt="instagram">
+    <a id="contactUs" href="#" onclick="alert('Contact Us')">Contact Us</a>
+  </div>
+</div>
+<AboutPage />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

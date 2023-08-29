@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* navbar */
+
+.navbar {
+  padding: 0px;
+  border-bottom: 3px solid rgb(14, 55, 86);
+}
+
+#title {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 33pt;
+  font-weight: bolder;
+  display: flex;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  width: fit-content;
+  border: 3px solid rgb(14, 55, 86);
+  padding: 0px 20px;
+  margin-left: 13%;
+  height: 50px;
+  align-items: center;
+}
+
+.nav-item {
+  border-radius: 100px;
+  width: fit-content;
+  border: 3px solid rgb(14, 55, 86);
+  padding: 0px 8px 0px 5px;
+}
+
+.container-fluid {
+  gap: 20.49%;
+  height: 100px;
+  /* background-color: rgb(64, 105, 136); */
+  background-color: rgb(32, 0, 215);
+}
+
+#login {
+  margin-top: 10px;
+  margin-right: 25px;
+}
+
+#theMarketIs {
+  color: white;
+  font-size: x-large;
+}
+#loginButton {
+  background-color: whitesmoke;
+  border: 3px solid rgb(14, 55, 86);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#updownMessage p {
+  width: 150px;
+  margin-top: 35px;
+}
+
+#updownMessage {
+  display: flex;
+}
+
+#textnode {
+  opacity: 1;
+  transition: opacity 1s;
+  margin-top: 35px;
+  margin-right: 32px;
+  font-size: x-large;
+  color: rgb(0, 255, 0);
+}
+
+#textnode.fade {
+  opacity: 0;
+}
+
+/* mainBody */
+
+#revertToCurrentBalance{
+  margin-left:16.4%;
+  background-color: whitesmoke;
+  padding: 3px 10px;
+  border-radius: 5px;
+
+}
+#stockInput{
+  margin:20px 0px 0px 105px;
+  background-color: whitesmoke;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+
+#submitStock{
+  background-color: whitesmoke;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+.hiLoTrade {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.smallTrade {
+  border-radius: 5px;
+  padding: 0px 10px;
+  background-color: whitesmoke;
+}
+
+#submit {
+  background-color: whitesmoke;
+  padding: 3px 10px;
+  border-radius: 5px;
+  
+
+}
+#belowGraphHiLo {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px 50px 0px;
+}
+#trade {
+  padding: 10px;
+  width: 60%;
+  height: fit-content;
+  font-size: 22pt;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  border: 3px solid rgb(14, 55, 86);
+}
+
+#date{
+  
+  border-radius: 5px;
+}
+#mainBody {
+  display: flex;
+  justify-content: space-evenly;
+  /* background-color: whitesmoke; */
+  background-color: gainsboro;
+}
+
+#stockSample {
+  display: flex;
+}
+
+#bigGraph {
+  width: 500px;
+}
+
+#dateBar {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 40px;
+}
+
+#leftSide {
+  margin: 20px 0px 0px 100px;
+  width: 600px;
+  height: 500px;
+  border: 3px solid rgb(14, 55, 86);
+  padding: 20px 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+#rightSide {
+  margin-right: 100px;
+}
+.stockSample {
+  width: 300px;
+  margin: 50px;
+  margin-top: 30px;
+  border: 3px solid rgb(14, 55, 86);
+  height: 200px;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+}
+
+.smallGraph {
+  margin: 0px 20px;
+  width: 200px;
+}
+
+.date {
+  background-color: white;
+  border: 0px;
+}
+
+#currentBalanceCard h4 {
+  margin-bottom: 20px;
+}
+
+#date {
+  margin: 20px 0px 0px 50px;
+}
+
+#stockViewer{
+  border: 3px solid rgb(14, 55, 86);
+  border-radius: 5px;
+  padding:8px;
+  font-size: 20pt;
+  background-color:whitesmoke ;
+  margin-top: 10px;
+  margin-left:15%;
+  font-style: italic;
+  text-decoration: underline ;
+}
+
+
+/* Bottom Bar */
+
+
+#botBar{
+  background-color: rgb(161, 161, 161);
+  border-top: 3px solid rgb(14, 55, 86);
+  border-bottom: 3px solid rgb(14, 55, 86);
+}
+
+#botInfo{
+  margin-left:13.3%;
+  margin-right:16.8%;
+  display:flex ;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#twitter{
+  height:50px;
+}
+
+#meta{
+  height:30px;
+}
+
+#instagram{
+  height:40px;
+}
+
+#contactUs{
+  font-size:larger;
+}
