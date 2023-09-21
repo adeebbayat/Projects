@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        #navBar{
+            display: flex;
+            justify-content: space-between;
+            padding:10px 30px;
+            border-bottom: 3px solid black;
+            align-items: center;
+            position:sticky;
+            top:0;
+        }
+        #rightSide{
+            display: flex;
+            gap:10px;
+        }
+        #middle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin:30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navBar">
+        <div id="leftSide">
+            <h1>PayPal</h1>
+        </div>
+        <div id="rightSide">
+            <button type="button" class="btn btn-primary">Ligma</button>
+            <!-- <form action="register.html">
+                <button class="btn btn-primary" type="submit">Register</button>
+            </form> -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Register
+            </button>
+        </div>
+    </div>
+    <div id="middle">
+        <h3>Current Balance: {{balance_in_db.balance}}</h3>
+    </div>
+
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

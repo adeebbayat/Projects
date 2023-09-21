@@ -20,16 +20,32 @@ class Login:
         query = """INSERT INTO users (first_name,last_name,email,password) 
         VALUES (%(first_name)s,%(last_name)s,%(email)s,%(password)s);"""
         return connectToMySQL("banking_schema").query_db(query, data)
+    
+    @classmethod
+    def get_by_login(cls,data):
+        query = "SELECT * FROM users WHERE email = %(email)s;"
+        result = connectToMySQL("banking_schema").query_db(query,data)
+        print(result)
+        # Didn't find a matching user
+        if len(result) < 1:
+            return False
+        return cls(result[0])   
+    
+    @classmethod
+    def get_account_balance(cls,data):
+        query = """SELECT * FROM balances
+JOIN users ON users.id = balances.user_id WHERE user_id = %(user_id)s"""
+        return connectToMySQL("banking_schema").query_db(query,data)
+
 
     @staticmethod
     def validate_login(login):
-        print(login)
         is_valid = True # we assume this is true
         if len(login['first_name']) < 2:
-            flash("Name must be at least 2 characters.")
+            flash("First name must be at least 2 characters.")
             is_valid = False
         if len(login['last_name']) < 2:
-            flash("Location must be at least 2 characters.")
+            flash("Last name must be at least 2 characters.")
             is_valid = False
         if not EMAIL_REGEX.match(login['email']): 
             flash("Invalid email address!")
