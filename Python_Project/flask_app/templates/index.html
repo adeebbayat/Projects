@@ -14,6 +14,8 @@
             align-items: center;
             position:sticky;
             top:0;
+            background: white;
+            background-color: rgb(232, 232, 232);
         }
         #rightSide{
             display: flex;
@@ -21,7 +23,8 @@
             gap:10px;
         }
         #carouselExampleAutoplaying{
-            margin:0px 100px 0px 100px;
+            margin:0px 20px 0px 20px;
+            
         }
         #middle{
             display: flex;
@@ -35,27 +38,76 @@
         #flash{
             color:red;
         }
+        #bottomBar{
+            display: flex;
+            justify-content: center;
+            padding:10px 30px;
+            border-top: 3px solid black;
+            align-items: center;
+            position:fixed;
+            bottom: 1px;
+            min-width: 100%;
+            gap:20px;
+            background: white;
+            
+        }
+        #twitter{
+            width:50px;
+        }
+        #meta{
+            margin-left:13px;
+            width:80px;
+        }
+        #instagram{
+            width:80px;
+        }
+        #contact{
+            color:blue;
+            text-decoration: underline;
+        }
+        #missionStatement{
+          margin: 20px 90px 0px 90px;
+          line-height: 40px;
+        }
+        #missionTitle{
+          margin: 30px 90px 0px 90px;
+          text-decoration: underline;
+        }
+        .serif{
+            font-family:serif;
+        }
+        .bigger{
+          font-size: 30pt;
+        }
+        #aBank{
+          margin:-10px 0px;
+        }
+        #title{
+          color:navy
+        }
+        .buttonBlue{
+          background-color:navy;
+          border: 1px solid navy;
+        }
     </style>
 </head>
 <body>
     <div id="navBar">
         <div id="leftSide">
-            <h1>PayPal</h1>
+          <h1 class="serif" id="title">Bayat Bank & Trust</h1>
         </div>
         <div id="rightSide">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLogin">
+            <button type="button" class="btn btn-primary buttonBlue" data-bs-toggle="modal" data-bs-target="#ModalLogin">
                 Login
             </button>
-            <!-- <form action="register.html">
-                <button class="btn btn-primary" type="submit">Register</button>
-            </form> -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            
+            <button type="button" class="btn btn-primary buttonBlue" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Register
             </button>
         </div>
     </div>
     <div id="middle">
-        <h3>A Bank You Can Trust.</h3>
+        <h3 class="serif bigger" id="aBank">A Bank You Can Trust.</h3>
     </div>
     <!-- Button trigger modal -->
 
@@ -81,7 +133,7 @@
                 <input type="password" class="form-control" id="password1" name="password1"placeholder="Password">
                 <label for="password">Password</label>
             </div>
-                <input type="submit" class="btn btn-primary" value="Login">
+                <input type="submit" class="btn btn-primary buttonBlue" value="Login">
         </form>
       </div>
     </div>
@@ -121,33 +173,50 @@
                 <input type="password" class="form-control"name="conf_password" id="conf_password" placeholder="Confirm Password">
                 <label for="conf_password">Confirm Password</label>
             </div>
-                <input type="submit" class="btn btn-primary" value="Register">
+                <input type="submit" class="btn btn-primary buttonBlue" value="Register">
         </form>
       </div>
     </div>
   </div>
 
 <!-- Carousel of Photos -->
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://i.ibb.co/dcq1mNH/img1.png" class="d-block w-100" alt="...">
+
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://i.ibb.co/xfD0shf/img1-1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/yFyJJrC/img3-1.jpg"class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/rMZL94B/img2-1.jpg" class="d-block w-100" alt="...">
+            </div>
           </div>
-          <div class="carousel-item">
-            <img src="https://i.ibb.co/6Jqxk4j/img2.png"class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://i.ibb.co/DDmMkkt/img3.png" class="d-block w-100" alt="...">
-          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <div id="missionTitle">
+          <h3>Mission Statement</h3>
+        </div>
+        <div id="missionStatement">
+          <p>At Bayat Bank & Trust, our mission is to empower individuals, businesses, and communities to achieve financial success and security. With unwavering commitment to trust, integrity, and innovation, we strive to provide exceptional banking and financial services that foster economic growth and prosperity.
+
+            We are dedicated to building lasting relationships with our customers by delivering personalized solutions that meet their unique financial needs. Our team of experienced professionals is driven by a passion for excellence, aiming to exceed expectations in every interaction.</p>
+        </div>
+
+
+      <div id="bottomBar">
+        <img id="twitter" onclick="alert('Twitter')"src="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png" alt="twitter">
+        <img id="meta" onclick="alert('Instagram')"src="https://metaverse-chat-application.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FMeta.c11d3cb5.png&w=640&q=75" alt="meta">
+        <img id="instagram" onclick="alert('Instagram')" src="https://logos-world.net/wp-content/uploads/2020/04/Instagram-icon-Logo-2016-present.png" alt="instagram">
+        <a id="contact"href="#">Contact Us</a>
       </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
