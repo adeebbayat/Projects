@@ -1,6 +1,5 @@
 package com.adeebbayat.server.models;
 
-import jakarta.persistence.Transient;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -10,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -22,13 +22,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message="First Name is required!")
-    @Size(min=3,max=128,message="First Name must be greater than 3 characters!")
-    private String firstName;
-
-    @NotBlank(message="Last Name is required!")
-    @Size(min=3,max=128,message="Last Name must be greater than 3 characters!")
-    private String lastName;
+    @NotBlank(message="Name is required!")
+    @Size(min=1,max=128,message="Name must be greater than 1 character")
+    private String name;
 
     @NotBlank(message="Email is required!")
     @Email(message="Please enter valid email!")
@@ -43,15 +39,9 @@ public class User {
     @Size(min=8, max = 128, message="Confirm Password must be at least 8 characters!")
     private String confirm;
 
-    @OneToMany(mappedBy="user",fetch = FetchType.LAZY)
-    private List<Order> orders;
 
     @OneToMany(mappedBy="user",fetch = FetchType.LAZY)
-    private List<Payment> payments;
-
-
-    public User() {
-    }
+    private List<ToDo> toDos;
 
 
     public Long getId() {
@@ -62,20 +52,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return this.firstName;
+    public String getName() {
+        return this.name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -102,20 +84,14 @@ public class User {
         this.confirm = confirm;
     }
 
-    public List<Order> getOrders() {
-        return this.orders;
+    public List<ToDo> getToDos() {
+        return this.toDos;
     }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
+    public void setToDos(List<ToDo> toDos) {
+        this.toDos = toDos;
     }
 
-    public List<Payment> getPayments() {
-        return this.payments;
-    }
 
-    public void setPayments(List<Payment> payments) {
-        this.payments = payments;
-    }
 
 }

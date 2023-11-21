@@ -1,0 +1,60 @@
+.topBar{
+    padding:0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid black;
+}
+
+.rightSide{
+    display: flex;
+    gap:30px;
+}
+
+.body{
+    display: flex;
+    justify-content: center;
+}
+
+.ToDoBody{
+
+}
+.ToDoTopBar{
+    display: flex;
+    justify-content: center;
+}
+
+.Task{
+    display: flex;
+    gap:50px;
+    padding:0px 20px;
+    min-width: 250px;
+    justify-content:flex-start;
+}
+
+.toDoTextTitle{
+    min-width: 100px;
+    max-width: 100px;
+}
+.toDoTextBody{
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.textBody1{
+    margin-left: 0px;
+    max-width: 150px;
+    overflow-wrap:break-word;
+}
+.textBody2{
+    margin-right: 20px;
+}
+
+.addToDo{
+    position: absolute;
+    left:30px;
+    top:70px;
+}
+
