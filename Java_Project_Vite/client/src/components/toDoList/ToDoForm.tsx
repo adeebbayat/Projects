@@ -16,7 +16,6 @@ const AddToDoTask: FC<AddToDoTaskProps> = (props) => {
         axios.post('http://localhost:8080/api/create', { title, body, date})
             .then((response: any) => {
                 console.log(response);
-                props.refreshPage(); // Call the refreshPage function after successful form submission
                 setTitle('');  // Clear the form fields
                 setBody('');
             })
@@ -24,6 +23,7 @@ const AddToDoTask: FC<AddToDoTaskProps> = (props) => {
                 console.log(error);
                 // handle the error, such as displaying an error message
             });
+            window.location.reload();
     };
 
     return (

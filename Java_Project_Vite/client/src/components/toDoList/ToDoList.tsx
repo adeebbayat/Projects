@@ -44,6 +44,7 @@ const ToDoList: FC<ToDoListProps> = (props) => {
             .catch(error => {
                 console.log(error);
             });
+            window.location.reload();
     };
 
     useEffect(() => {
