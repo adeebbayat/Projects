@@ -4,7 +4,6 @@ import '../style.css'
 import ToDoList from '../components/ToDoList';
 import AddToDoTask from '../components/AddToDoTask';
 
-
 const Main = () => {
     const [refresh, setRefresh] = useState(false);
 
