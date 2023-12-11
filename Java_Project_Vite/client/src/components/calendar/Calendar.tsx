@@ -8,6 +8,7 @@ const daysOfWeek = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
 interface Props{
     value?: Date;
     onChange?: (value: Date) => void;
+    
 }
 
 const Calendar: React.FC<Props> = ({value = new Date(), onChange}) => {
@@ -17,7 +18,7 @@ const Calendar: React.FC<Props> = ({value = new Date(), onChange}) => {
     const [tasks, setTasks] = useState<{ title: string, body: string, date: Date }[]>([]);
     const [showDateInfo, setShowDateInfo] = useState(false);
     const [selectedTasks, setSelectedTasks] = useState<{ title: string, body: string }[]>([]);
-
+    const [rerender, setRerender] = useState(false);
     useEffect(() => {
         axios.get('http://localhost:8080/api/todos')
             .then(res => {
@@ -30,10 +31,10 @@ const Calendar: React.FC<Props> = ({value = new Date(), onChange}) => {
                 const newBodies = res.data[1].map((item: any, index: any) => ({ body: item }));
                 const newTasks = newTitles.map((item: any, index: any) => ({ ...item, ...newBodies[index], date: newDates[index] }));
                 setTasks(newTasks);
-                
+                setRerender(true);
             })
             .catch(err => console.log(err));
-    }, []);
+    }, [rerender]);
 
     const startDate = startOfMonth(value);
     const endDate = endOfMonth(value);
@@ -76,7 +77,7 @@ const Calendar: React.FC<Props> = ({value = new Date(), onChange}) => {
                         <Cell key={index}></Cell>
                     ))}
 
-                {Array.from({length: numDays}).map((_,index) =>{
+                {rerender && Array.from({length: numDays}).map((_,index) =>{
                     const date = index + 1;
                     const isCurrentDate = date === value.getDate();
                     const containsTask = dates.some((d) => d.getDate() === date && d.getMonth() === value.getMonth() && d.getFullYear() === value.getFullYear());
@@ -92,9 +93,7 @@ const Calendar: React.FC<Props> = ({value = new Date(), onChange}) => {
             <div>
                 {selectedTasks.map((task, index) => (
                     <div className = "w-[400px]" key={index}>
-                        {/* <h4 className="font-bold underline">Task {index + 1}</h4> */}
                         <h5>{index+1}) {task.title}</h5>
-                        {/* <p><span className="font-bold">Body:</span> {task.body}</p> */}
                     </div>
                 ))}
             </div>

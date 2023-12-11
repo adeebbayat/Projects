@@ -2,14 +2,11 @@ import React, { useState, FC } from 'react';
 import axios from 'axios';
 import { format, setDate } from 'date-fns';
 
-interface AddToDoTaskProps {
-    refreshPage: () => void;
-}
 
-const AddToDoTask: FC<AddToDoTaskProps> = (props) => {
+const AddToDoTask = () => {
     const [title, setTitle] = useState<string>('');
     const [body, setBody] = useState<string>('');
-    const [date, setDate] = useState<string>('');
+    const [date, setDate] = useState<string>(format(new Date(), 'yyyy-MM-dd'));
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -23,7 +20,7 @@ const AddToDoTask: FC<AddToDoTaskProps> = (props) => {
                 console.log(error);
                 // handle the error, such as displaying an error message
             });
-            window.location.reload();
+            
     };
 
     return (
@@ -33,12 +30,8 @@ const AddToDoTask: FC<AddToDoTaskProps> = (props) => {
                     <input type="text" className="form-control" placeholder='Enter Task' value={title} onChange={(e) => setTitle(e.target.value)} />
                 </label>
                 <br /><br />
-                {/* <label>
-                    <input type="text" className="form-control" placeholder='Enter Body' value={body} onChange={(e) => setBody(e.target.value)} />
-                </label>
-                <br /> <br /> */}
                 <label>
-                    <input type="date" className="form-control" onChange = {(e) => setDate(e.target.value)}/>
+                    <input type="date" className="form-control" value = {date} onChange={(e) => setDate(e.target.value)}/>
                 </label>
                 <br /> <br />
                 <button className="btn btn-primary" type="submit">Add</button>
